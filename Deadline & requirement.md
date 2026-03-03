@@ -13,11 +13,11 @@
 
     * **GitHub repository link** containing:
 
-      * **Task 1**: * **➢ Preliminary readme in the frontpage by a README.md
+      * **Task 1**: ➢ Preliminary readme in the frontpage by a README.md
                     ➢ markdown file
                     ➢ See an example Github repo,
                       (https://github.com/XPixelGroup/HYPIR)
-      * **Task 2**: * **➢ Preliminary code submission
+      * **Task 2**: ➢ Preliminary code submission
                     ➢ Preliminary readme in the frontpage by a README.md
                     ➢ markdown file
 
