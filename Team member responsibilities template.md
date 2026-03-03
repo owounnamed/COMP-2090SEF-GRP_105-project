@@ -1,4 +1,4 @@
-### **Team Member Responsibilities**
+### **Team Member Responsibilities template**
 
 #### **Task 1: Research & Planning**
 
