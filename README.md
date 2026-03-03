@@ -30,4 +30,4 @@ This project is a **Food Review Application** designed to help users discover an
 
 ## Areas Covered:
 
-* **Ho Man Tin** and **Mong Kok**, Kowloon District.
+* **Ho Man Tin** and **Mong Kok**.
