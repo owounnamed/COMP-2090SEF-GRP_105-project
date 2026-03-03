@@ -1,94 +1,83 @@
-Deadlines:
+Here is a list of all the deadlines and requirements for your course project based on the provided documents:
 
-1. Deadline:  15/2/2026:
+---
 
-Submit group name and member list (including student IDs).
+### **1. Deadline: 15/2/2026**
 
-2. Deadline:  8/3/2026:
+* **Requirement:**
 
-Pre-submission on OLE:
+  * Submit the **group name** and **list of group members** (including student IDs) via the provided link.
 
-GitHub repository link with initial code for both Task 1 and Task 2.
+### **2. Deadline: 8/3/2026**
 
-README.md file with project overview.
+* **Requirement:**
 
- Task 1
-➢ Preliminary code submission
-➢ Preliminary readme in the frontpage by a README.md
-markdown file
-See an example Github repo,
-(https://github.com/XPixelGroup/HYPIR)
-o Task 2
-➢ Preliminary code submission
-➢ Preliminary readme in the frontpage by a README.md
-markdown file
+  * Submit the **pre-submission** of your project via OLE (Online Learning Environment).
+  * **What to submit:**
 
-3. Deadline: 12/4/2026 (23:59 PM)
+    * **GitHub repository link** containing:
 
-Requirement:
+      * **Task 1**: ➢ Preliminary readme in the frontpage by a README.md
+                    ➢ markdown file
+                    ➢ See an example Github repo,
+                      (https://github.com/XPixelGroup/HYPIR)
+      * **Task 2**: ➢ Preliminary code submission
+                    ➢ Preliminary readme in the frontpage by a README.md
+                    ➢ markdown file
 
-Final submission via OLE in a zip file containing the following:
+    * Both tasks should be in separate folders within the same repository.
+    * The pre-submission will allow the instructor to review your progress.
 
-Task 1:
 
-Project report (PDF) including:
+### **3. Deadline: 12/4/2026 (23:59 PM)**
 
-Cover page with project title, brief description, and GitHub link.
+* **Requirement:**
 
-Main content (max. 3 pages) describing:
+  * **Final submission** via OLE in a zip file containing the following:
 
-Core functions of your program.
+    * **Task 1:**
 
-Summary of the Object-Oriented Programming (OOP) concepts used.
+      * **Project report (PDF)** including:
 
-Use of external resources/packages.
+        * **Cover page** with project title, brief description, and GitHub link.
+        * **Main content** (max. 3 pages) describing:
 
-Self-reflection on weaknesses and potential future improvements.
+          * Core functions of your program.
+          * Summary of the Object-Oriented Programming (OOP) concepts used.
+          * Use of external resources/packages.
+          * Self-reflection on weaknesses and potential future improvements.
+        * **Appendix**: Diagrams, tables, test cases, and other supplementary materials.
+        * **GitHub repository link** containing Python code files and the **user guide**.
+        * **5-minute introduction video** link.
+    * **Task 2:**
 
-Appendix: Diagrams, tables, test cases, and other supplementary materials.
+      * **Study report (PDF)** including:
 
-GitHub repository link containing Python code files and the user guide.
+        * **Cover page** with details of the selected data structure and algorithm.
+        * **Main content** (max. 3 pages) including:
 
-5-minute introduction video link.
+          * Introduction to the new data structure and algorithm.
+          * Time complexity analysis.
+          * Application examples.
+        * **GitHub repository link** containing Python code files and the **user guide**.
+        * **5-minute introduction video** link.
+    * **Appendix**: Diagrams, tables, flowcharts, and other necessary content.
+    * **Note**: Submit the reports in PDF format. Do not submit OneDrive links.
 
-Task 2:
+### **4. Format Requirements for Reports:**
 
-Study report (PDF) including:
+* **Page size:** A4
+* **Font:** Times New Roman
+* **Font size:** 12 points
+* **Margins:** Normal (2.54 cm all around)
+* **Spacing:** Single-line spacing
 
-Cover page with details of the selected data structure and algorithm.
+### **Additional Notes:**
 
-Main content (max. 3 pages) including:
+* **Academic Honesty Declaration**: Include a declaration in your report confirming originality and proper citation of external resources.
+* **Late submissions** or non-compliance with report length requirements will result in score deductions.
+* **Final work** must be submitted through OLE; email submissions will not be accepted.
 
-Introduction to the new data structure and algorithm.
+---
 
-Time complexity analysis.
-
-Application examples.
-
-GitHub repository link containing Python code files and the user guide.
-
-5-minute introduction video link.
-
-Appendix: Diagrams, tables, flowcharts, and other necessary content.
-
-Note: Submit the reports in PDF format. Do not submit OneDrive links.
-
-4. Format Requirements for Reports:
-
-Page size: A4
-
-Font: Times New Roman
-
-Font size: 12 points
-
-Margins: Normal (2.54 cm all around)
-
-Spacing: Single-line spacing
-
-Additional Notes:
-
-Academic Honesty Declaration: Include a declaration in your report confirming originality and proper citation of external resources.
-
-Late submissions or non-compliance with report length requirements will result in score deductions.
-
-Final work must be submitted through OLE; email submissions will not be accepted.
+This list outlines the deadlines and the specific requirements for each submission. Be sure to follow the guidelines carefully to avoid penalties and ensure you meet the course's expectations.
