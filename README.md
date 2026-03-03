@@ -1,7 +1,3 @@
-Here’s a formal description you can use for your GitHub repository for the **Food Review Application**:
-
----
-
 # Food Review Application
 
 This project is a **Food Review Application** designed to help users discover and review restaurants within the Kowloon district, specifically the areas around **Ho Man Tin** and **Mong Kok**. The application provides both **User** and **Admin** functionalities, where users can post reviews, upload images, and browse restaurant recommendations, while admins can manage restaurant information and reviews.
@@ -35,7 +31,3 @@ This project is a **Food Review Application** designed to help users discover an
 ## Areas Covered:
 
 * **Ho Man Tin** and **Mong Kok**, Kowloon District.
-
----
-
-This description provides a formal overview of your project’s purpose, functionalities, and technologies used. It's clear and concise while outlining both user and admin functionalities, as well as additional features like sorting, budget selection, and map integration.
