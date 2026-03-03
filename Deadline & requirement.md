@@ -13,13 +13,13 @@
 
     * **GitHub repository link** containing:
 
-      * **Task 1**: ➢ Preliminary readme in the frontpage by a README.md
-                    *➢ markdown file
-                    *➢ See an example Github repo,
+      * **Task 1**: * **➢ Preliminary readme in the frontpage by a README.md
+                    ➢ markdown file
+                    ➢ See an example Github repo,
                       (https://github.com/XPixelGroup/HYPIR)
-      * **Task 2**: ➢ Preliminary code submission
-                    *➢ Preliminary readme in the frontpage by a README.md
-                    *➢ markdown file
+      * **Task 2**: * **➢ Preliminary code submission
+                    ➢ Preliminary readme in the frontpage by a README.md
+                    ➢ markdown file
 
     * Both tasks should be in separate folders within the same repository.
     * The pre-submission will allow the instructor to review your progress.
