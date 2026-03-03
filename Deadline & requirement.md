@@ -1,7 +1,3 @@
-Here is a list of all the deadlines and requirements for your course project based on the provided documents:
-
----
-
 ### **1. Deadline: 15/2/2026**
 
 * **Requirement:**
