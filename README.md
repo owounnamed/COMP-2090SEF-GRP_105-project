@@ -1,4 +1,4 @@
-# Food Review Application
+# Unieats
 
 This project is a **Food Review Application** designed to help users discover and review restaurants within the Kowloon district, specifically the areas around **Ho Man Tin** and **Mong Kok**. The application provides both **User** and **Admin** functionalities, where users can post reviews, upload images, and browse restaurant recommendations, while admins can manage restaurant information and reviews.
 
