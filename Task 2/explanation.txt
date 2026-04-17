@@ -1,0 +1,13 @@
+This project is a single Python application called UniEats, developed using multiple modules and OOP concepts.
+Within this application, I also integrated one self-studied data structure and one self-studied algorithm to satisfy Task 2.
+Therefore, the two tasks appear together in the same project, but they serve different purposes:
+
+1)the whole system is my Task 1 OOP-based application
+
+2)the embedded Graph and Shell Sort are my Task 2 self-studied components.
+
+
+They appear simultaneously because I designed the project as one complete application rather than two disconnected programs.
+The OOP application is the main system, while the self-studied data structure and algorithm are integrated into the system to support its features.
+For example, the RecommendationGraph supports similar restaurant recommendation, and ShellSort supports restaurant sorting.
+In this way, Task 2 is not isolated; it is applied meaningfully inside Task 1.
