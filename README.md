@@ -1,48 +1,47 @@
-UniEats: Food Review Application for Kowloon’s Ho Man Tin and Mong Kok
+UniEats: Food Review Application for Kowloon's Ho Man Tin and Mong Kok
 1. Real-Life Problem to Be Addressed
-In the densely populated Kowloon districts of Ho Man Tin and Mong Kok, there are many diverse dining options (Chinese, Japanese, Thai, Korean, Western, café, etc.). This lead to several big problems for diners and administrators:
-For users:
-Hard to quickly filter restaurants by key criteria (area, cuisine type, budget) to match their preferences;
-No localized, personalized restaurant recommendations (like similar restaurants based on dining history, random picks for casual choices);
-No central platform to submit and view full restaurant reviews (include text, ratings, and image attachments);
-Can’t easily see restaurant locations on a map to make location-based dining decisions.
-For administrators:
-No simple tool to manage restaurant metadata (add/update/delete entries for name, area, cuisine, budget, geographic coordinates);
-No systematic way to check user reviews (delete inappropriate content, track deleted reviews with reasons, and keep data integrity);
-No single interface to sync restaurant data with map displays.
-The main problem is to build a localized, easy-to-use platform that brings together restaurant discovery, review management, and administrative oversight for Ho Man Tin and Mong Kok. It solve the inefficiency of scattered dining information and unstructured review moderation in these areas.
+Ho Man Tin and Mong Kok, Kowloon districts, boast many diverse restaurant options (Chinese, Japanese, Thai, Korean, Western, café-style, etc.). This has lead to several major issues for both users and administrators:
+Users' side:
+Cannot efficiently filter restaurants according to important attributes (area, cuisine type, budget);
+Lack of personalized restaurant recommendation (similiar restaurants according to dining history, random picks, etc.);
+Lack of centralized platform for posting and viewing full reviews (with text, rating, and image attachment);
+Cannot easily find restaurant locations on the map.
+Admins' side:
+Need of tool for managing restaurant metadata (create/add/update/delete records for name, area, cuisine type, budget, geographical coordinates, etc.);
+Need of tool for reviewing and moderating reviews (delete inappropriate posts, archive deleted reviews along with delete reasons, etc.);
+Need of tool for updating map information (for restaurant names and other relevant attributes).
+The main problem is to create an efficient localized platform combining restaurant recommendation, review management and administration.
 2. Survey of Real-Life Solutions to the Problem
-In real life, commercial platforms and tools address the challenge of restaurant discovery and review management. Key patterns are:
-Consumer-facing platforms (e.g., OpenRice, Dianping): These platforms have filter/sort functions (by area, cuisine, price, rating), user-made reviews (text + images), personalized recommendations (based on browsing/consumption history), and map integration to show restaurant locations. But these platforms are often city-wide or national, they lack hyper-local focus on small districts like Ho Man Tin/Mong Kok, and need internet to work.
-Administrative tools: Restaurant management systems (e.g., POS-integrated backends) let admins update venue details, while review moderation tools (e.g., content management systems) allow delete/flag inappropriate reviews and keep audit trails (e.g., delete reasons). These tools are often proprietary and expensive for small, localized use cases.
-Technical implementations:
-Relational databases (MySQL, SQLite) store structured restaurant/review data with foreign key relationships (e.g., link reviews to restaurants);
-Graph-based algorithms power "similar restaurant" recommendations;
-Embedded map APIs (e.g., Google Maps, OpenStreetMap) show geographic data;
-Sorting algorithms (e.g., quicksort, shell sort) make filter results better for users.
-UniEats adapt these real-world solutions into a lightweight, offline tool for Ho Man Tin/Mong Kok. It avoid the complexity and cost of commercial platforms but keep core functions.
+In real life, commercial solutions tackle the task of restaurant discovery and management. Key approaches are:
+Platforms for consumers (e.g., OpenRice, Dianping): have filter/sorting function according to different parameters (area, cuisine type, price level), user-provided restaurant reviews (including text and images), personal recommendations for users (based on their browsing/consumption history), mapping function which allows finding restaurant location. However, these platforms tend to be nationwide/citywide rather than district-specific and they require constant internet connection.
+Tools for administrations: restaurant management systems provide ability to add/update restaurant entries while review tools allow flagging/deleting inappropriate reviews and maintaining an audit trail with delete reasons (e a.). These tools often proprietary and are expensive in terms of maintenance cost.
+Technical approach:
+Use relational database (e.g., MySQL or SQLite) with foreign keys to store structured restaurant/review data;
+Implement graph-based algorithms which can generate "similar restaurant" recommendation;
+Embed map API in order to visualize restaurant location data (Google Maps, OpenStreetMap and other);
+Implement sorting algorithms to enhance filtering experience (quicksort, shellsort, etc.)
+UniEats adapts these real-life techniques but avoids using commercial tools by creating a simple solution without internet connection for Ho Man Tin and Mong Kok districts.
 3. Data Structures Used and Their Usage in the Project
-The project uses multiple data structures to solve the target problems, each with a clear purpose:
-3.1 Graph (RecommendationGraph Class)
-Structure: Made as an adjacency list (dictionary adjacency where keys = restaurant IDs, values = lists of similar restaurant IDs).
-Usage: Powers the "Similar Recommendation" feature. The graph is built by adding similarity edges between restaurant IDs (e.g., link a Chinese restaurant in Mong Kok to another Chinese eatery in the same area). When a user select a restaurant, the graph’s get_similar_restaurants() method gets adjacent restaurant IDs, return a list of similar dining options. This structure is perfect for recommendation systems because it efficiently model pairwise relationships between entities.
-3.2 List (Dynamic Arrays)
-Structure: Python lists store collections of Restaurant/Review objects, filtered results, and map markers.
+Several kinds of data structures were used in the project to address specified problems:
+3.1 Graph (RecommendationGraph class):
+Structure: implemented as an adjacency list of graph (dictionary adjacency with keys - restaurant IDs, values - lists of restaurant IDs connected with edge).
+Usage: enables the "Similar Recommendation" feature. Adjacency between restaurant IDs can be created through specifying similarity relations (e g., connecting two Chinese restaurants located in the same area). When selected, the graph returns a list of similar restaurants with respect to the selected one by the means of get_similar_restaurants() method. The graph data structure is perfect for creating recommendation systems.
+3.2 List (Dynamic arrays):
+Structure: Python list can contain Restaurant/Review objects and lists for filtered results and map markers.
 Usage:
-Stores all restaurants/reviews get from the database (e.g., current_restaurants in UniEatsApp);
-Used as input for the Shell Sort algorithm (custom implementation in utils.py) to sort restaurants by rating (descending), price (ascending), or name (alphabetical). Shell Sort is chosen because it is efficient on small-to-medium datasets (typical for hyper-local restaurant lists) and adapt to custom sort keys.
-3.3 Relational Database (SQLite with Structured Tables)
-Structure: Three core tables with relational constraints:
-restaurants: Stores restaurant metadata (ID, name, area, cuisine, budget, latitude/longitude) with id as primary key;
-reviews: Links to restaurants via restaurant_id (foreign key, cascading delete) to store user reviews (username, rating, comment, image path);
-deleted_reviews: Archives deleted reviews (original ID, delete reason) for audit trails.
-Usage: Provides persistent, structured storage for all core data. Foreign key constraints ensure data integrity (e.g., delete a restaurant auto-deletes its reviews), while SQL queries enable filtered retrieval (e.g., get_reviews_by_restaurant(), filter_restaurants()).
-3.4 Dictionary (Hash Table)
-Structure: Used in RecommendationGraph (adjacency list) and tkinter UI (e.g., StringVar mappings for filter dropdowns).
-Usage: Enables O(1) average-time complexity for lookups (e.g., check if a restaurant ID exists in the graph’s adjacency list) and efficient binding of UI elements to filter values (area, cuisine, budget).
-3.5 Map Markers (List of Tkintermapview Markers)
-Structure: List of map marker objects (current_markers in EmbeddedMapService).
-Usage: Tracks markers added to the OpenStreetMap view to allow bulk clearing (via clear_markers()) and dynamic updates when filters are applied (e.g., show only filtered restaurants on the map).
+Contains all restaurant/review entries taken from the database (current_restaurants variable in UniEatsApp);
+Serves as input data for Shell Sort algorithm (implemented in utils.py), which performs sorting by rating (desc), price (asc) or name (alphabetically). Such algorithm was chosen due to its simplicity, efficiency on small to medium-size data (characteristic for localized restaurant lists) and adaptability for sorting by specific key.
+3.3 Relational Database (SQLite + structured tables):
+Structure: three core tables, including foreign key constraints for maintaining integrity of data:
+restaurants - contains restaurant attributes (ID, name, area, cuisine type, budget, latitude/longitude); ID is a primary key;
+reviews - links restaurant records through restaurant_id (foreign key with on_delete cascade); allows adding reviews (user name, rating, comment, image);
+deleted_reviews - archive table for keeping deleted reviews (original ID, deletion reason).
+Usage: enables persistent storage of data. Foreign key allows maintaining integrity of relations (deleting restaurant automatically deletes its reviews); allows retrieving filtered data through queries.
+3.4 Dictionary (hash table):
+Structure: used in RecommendationGraph (as adjacency list) and tkinter UI (StringVar mapping for filter options in drop-down menu).
+Usage: allows implementing O(1) look-ups (e g., checking whether ID is stored in an adjacency list of recommendation graph) and fast bind operations in UI (mapping filter options - area, cuisine type, budget).
+3.5 Map Markers (list of Tkintermapview.Marker objects):
+Structure: list of Marker objects, stored in current_markers variable in EmbeddedMapService class.
+Usage: tracks Marker objects added to OpenStreetMap in order to implement clear_markers() method which allows batch deleting map markers. Markers list also helps implementing filtered map view according to applied filters.
 4. Declaration of Prior Work
-This project is original development and not a direct fork/modification of an existing complete project. But it take inspiration from core functions of real-world restaurant review platforms (OpenRice, Dianping) and adapt established technical practices (e.g., SQLite for relational data, graph structures for recommendations, shell sort for local data sorting) to a lightweight, offline, district-specific application. The codebase uses standard Python libraries (tkinter, sqlite3) and open-source tools (tkintermapview, PIL) but do not reuse pre-existing project code—all logic (UI, data management, recommendations, map integration) is built from scratch for the Ho Man Tin/Mong Kok use case.
-The project also include self-studied technical concepts (Shell Sort algorithm, Graph data structure) to show custom implementation of core functionality, instead of rely on pre-built libraries for sorting/recommendation logic.
+This project involves original development of software which is not a fork from any existing project. However, the code borrows some ideas implemented by real-world applications (e.g., OpenRice, Dianping) but applies them to a localized, district-specific restaurant review platform. Technical methods such as relational data storage (SQLite), recommendation (graph), sorting (shell sort) were borrowed and adapted to the project requirements. No prior projects are reused; standard Python modules (tkinter, sqlite3) and open-source projects (tkintermapview, PIL) are used but not copied in any form; UI, database, recommendation and map modules were implemented from scratch. Moreover, several self-studied techniques (Shellsort algorithm, Graph data structure) were utilized in order to demonstrate implementation of core functionalities.
